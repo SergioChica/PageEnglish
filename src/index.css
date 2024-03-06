@@ -110,6 +110,51 @@ main {
   justify-content: center;
 }
 
+.changeLenguaje {
+  position: fixed;
+  display: flex;
+  /* gap: 10px; */
+  justify-content: space-between;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+  padding: 15px 15px 0 15px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid gray;
+  z-index: 998;
+}
+
+.containerLenguaje {
+  display: flex;
+  gap: 10px;
+}
+
+button#español {
+  height: 35px;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+button#ingles {
+  height: 35px;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+button#close {
+  font-size: 25px;
+  margin: 0;
+  height: 35px;
+  background: none;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
 .containerMain {
   height: 100%;
   width: 90%;

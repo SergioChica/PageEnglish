@@ -4,7 +4,7 @@ import './capitals.css'
 import { GiColombia } from "react-icons/gi";
 
 
-export const Capitals = ({id,img1,img2,img3,title,link}) => {
+export const Capitals = ({id,img1,img2,img3,title,link,text='Visita Su Historia'}) => {
   return (
     <>
     <div id={id} className="containerSliderAndText">
@@ -22,7 +22,7 @@ export const Capitals = ({id,img1,img2,img3,title,link}) => {
     </div>
     <div className="textAndLink">
         <h2 className='titleCapitals'>{title}</h2>
-        <a href={link} className='linkCapitals' target='_blank'>Visita Su Historia <GiColombia /> </a>
+        <a href={link} className='linkCapitals' target='_blank'>{text}<GiColombia /> </a>
     </div>
     </div>
    </>

@@ -1,6 +1,9 @@
 import React from 'react'
+import { useState } from 'react'
 import { Main } from '../Layouts/Main/Main'
+import { Header } from '../Layouts/Header/Header'
 import { Footer } from '../Layouts/Footer/Footer'
+
 
 import { ContainerCards } from '../ContainerCards/ContainerCards'
 import { Cards } from '../Cards/Cards'
@@ -40,12 +43,46 @@ import oda from '../../assets/oda.jpg'
 import xo from '../../assets/xo.jpg'
 
 import { FaInstagram } from "react-icons/fa";
+import { TbWorldPin } from "react-icons/tb";
 
 export const Home = () => {
     
+  const [showContainer, setShowContainer] = useState()
+
+  const toggleContenedor = () => {
+    setShowContainer(!showContainer);
+  };
+
+  const goEnglish = () => {
+    window.location.href = '/HomeEnglish';
+  };
+    
   return (
     <>
+    <Header>
+        <div className="containerHeader">
+            <h2>TurismCOL</h2>
+            <h2>Explora colombia</h2>
+            <div className="lenguageAndLogin">
+            <div className="containerLenguage">
+                <TbWorldPin onClick={toggleContenedor} />
+            <div className="barSeparet"></div>
+            <p className="lenguage">ES</p>
+            </div>
+            <p className='login'>Iniciar sesion</p>
+            </div>
+        </div>
+    </Header>
     <Main>
+        {showContainer && (
+        <div  className="changeLenguaje">
+            <div className="containerLenguaje">
+            <button id='español'>Español</button>
+            <button id='ingles' onClick={goEnglish}>Ingles</button>
+            </div>
+            <button id='close' onClick={toggleContenedor}>X</button>
+        </div>
+        )}
         <div className="containerMain">
             <section className='sectionOne'>
                 <div className="titleAndText">
@@ -69,7 +106,7 @@ export const Home = () => {
                     
                     <Cards img={cristales} title='Caño Cristales' text='Caño Cristales es un río de Colombia que está ubicado en la sierra de la Macarena, en el municipio del mismo nombre, en el departamento del Meta.' location='Serranía de la Macarena' />
                     
-                    <Cards img={perdida} title='Ciudad Perdida' text='Ciudad Perdida, también conocida como Teyuna o Buritaca-200, ​ es uno de los principales sitios arqueológicos de Colombia.​' location='Sierra Nevada de Santa Marta, Magdalena' />
+                    <Cards img={perdida} title='Ciudad Perdida' text='Ciudad Perdida, también conocida como Teyuna o Buritaca-200, es uno de los principales sitios arqueológicos de Colombia.​' location='Sierra Nevada de Santa Marta, Magdalena' />
                     
                     <Cards img={guatape} title='Guatapé' text='Guatapé es un municipio turístico de los Andes al noroeste de Colombia y al este de Medellín. Es famoso por sus casas decoradas con bajorrelieves de colores. Está situado cerca del embalse artificial de Peñol-Guatapé, un centro de deportes acuáticos muy concurrido.' location='Peñol Guatapé' />
                 </ContainerCards>
