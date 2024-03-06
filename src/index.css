@@ -19,6 +19,8 @@
 
 div#root {
   min-height: 100vh;
+  background-color: white;
+
 }
 
 body {
@@ -28,13 +30,14 @@ body {
   width: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+body::-webkit-scrollbar{
+  width: 10px;
+  background-color: white;
 }
-a:hover {
-  color: #535bf2;
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(24, 23, 23); 
 }
 
 h1 {
@@ -52,6 +55,7 @@ header {
   position: fixed;
   top: 0;
   border-bottom: 1px solid gray;
+  z-index: 999;
 }
 
 .containerHeader {
@@ -100,7 +104,7 @@ main {
   width: 100%;
   min-height: 100vh;
   height: auto;
-  padding: 7% 0 0 0;
+  padding: 7% 0 4% 0;
   color: black;
   display: flex;
   justify-content: center;
@@ -118,7 +122,22 @@ main {
 }
 
 .titleAndText {
-  width: 38%;
+  font-size: 20px;
+}
+
+p.textMain {
+  font-size: 100%;
+}
+
+#containerSliderAndTextCapital {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleAndSlidersCapital {
+  width: 30%;
 }
 
 h2.titleMain {
@@ -139,9 +158,14 @@ h2.titleMain {
   width: 100%;
 }
 
+h2.titleCard {
+  font-size: 21px;
+}
+
 .titleCards {
   width: 10%;
 }
+
 
 .containerCards {
   position: relative;
@@ -151,46 +175,96 @@ h2.titleMain {
 
 .cards {
   display: flex;
+  gap: 50px;
   overflow-x: scroll;
+  padding: 0 0 15px 0;
 }
 
+.cards::-webkit-scrollbar{
+  width: 3%; 
+}
+
+.cards::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(255,252,0,1) 36%, rgba(0,5,255,1) 52%, rgba(255,0,0,1) 73%); 
+}
 
 .card {
   flex: 0 0 auto;
-  margin: 0 50px 0px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 250px;
+  height: 100%;
   /* text-align: center; */
   border-radius: 6px;
 }
 
 .imgCard {
   width: 100%;
+  max-height: 166px;
+  min-height: 166px;
+  border-radius: 6px;
 }
 
 .containerTextCard {
   width: 90%;
 }
 
-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
+.textCard {
+  overflow-x: scroll;
+  word-wrap: break-word;
+  max-height: 96px;
+  font-size: 16px;
+}
+
+.textCard::-webkit-scrollbar{
+  background: transparent;
+}
+
+.sectionThree {
+  padding: 60px 0px 0px 0;
+  display: flex;
+  gap: 40px;
+}
+
+.titleAndSliders {
+  width: 100%;
+}
+
+.containerCapitals {
+  width: 100%;
+  height: 100%;
+}
+
+.containerSliders {
+  display: flex;
+  gap: 20px;
+}
+
+.sectionFour {
+  padding: 60px 0px 0px 0;
+  display: flex;
+  gap: 40px;
+}
+
+footer {
+  height: 200px;
   color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid gray;
 }
 
-.prev {
-  left: 0;
+footer p {
+  font-size: 20px;
 }
 
-.next {
-  right: 0;
+svg {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
